@@ -47,7 +47,7 @@ export default function Index() {
       </View>
       {showAppOptions ?(
         <View style={styles.optionsContainer}>
-          <View style ={styles.optionsRow}>
+          <View style ={styles.opitonsRow}>
             <IconButton icon="refresh" label="Reset" onPress={onReset} />
             <CircleButton onPress={onAddStricker} />
             <IconButton icon="save" label="Save" onPress={onSaveImageAsync} />
