@@ -41,7 +41,7 @@ export default function Index() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}> Seja membro </Text>
+      <Text style={styles.text}>"Meu cabelo tem o poder do sol. Ele brilha quando eu canto."</Text>
       <View style={styles.imageContainer}>
         <ImageViewer imgSource={PlaceholderImage} selectedImage={selectedImage} />
       </View>

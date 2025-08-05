@@ -6,7 +6,7 @@ export default function BuscaCEP() {
 
 return ( 
     <View style={styles.container}> 
-        <Text>Consulte seu CEP</Text> 
+        <Text style={{ color: '#fff' }}>Consulte seu CEP</Text> 
 
 <TextInput 
     style={styles.textinput}
@@ -16,19 +16,17 @@ return (
     keyboardType = "numeric" 
 />
 
-<Text>(cep)</Text> 
-
-<Button 
+<Button color='#c494ff'
     title="Buscar" 
     onPress = {buscarCEP} 
 /> 
 
 {endereco.logradouro !== '' && (
     <View style = {styles.result}> 
-        <Text>Logradouro: {endereco.logradouro}</Text> 
-        <Text>Bairro: {endereco.bairro}</Text> 
-        <Text>Cidade: {endereco.localidade}</Text> 
-        <Text>Estado: {endereco.uf}</Text> 
+        <Text style={{ color: '#fff' }}>Logradouro: {endereco.logradouro}</Text> 
+        <Text style={{ color: '#fff' }}>Bairro: {endereco.bairro}</Text> 
+        <Text style={{ color: '#fff' }}>Cidade: {endereco.localidade}</Text> 
+        <Text style={{ color: '#fff' }}>Estado: {endereco.uf}</Text> 
     </View> 
 )} 
         </View> 
@@ -45,17 +43,19 @@ const styles = StyleSheet.create({
 
     textinput: { 
         width: '80%', 
-        borderWidth: 1, 
+        borderWidth: 2, 
         borderColor: '#8b62a3',
         padding: 8, 
         marginVertical: 10, 
+        color: '#fff',
     },
 
     result: { 
         marginTop: 20, 
         padding: 16, 
-        borderWidth: 1, 
+        borderWidth: 2, 
         borderColor: '#8b62a3', 
         borderRadius: 8, 
     },
+    
 });

@@ -49,6 +49,15 @@ export default function TabLayout() {
         ),
     }}
     />
+    <Tabs.Screen
+    name="buscaCEP"
+    options={{
+        title: 'Cep',
+        tabBarIcon: ({ color, focused}) =>  (
+           <AntDesign name={focused ? 'exclamationcircle' : 'exclamationcircleo'} color='yellow' size={24}/> 
+        ),
+    }}
+    />
   </Tabs>
   );
 }
