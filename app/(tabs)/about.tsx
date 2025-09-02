@@ -24,8 +24,8 @@ const styles = StyleSheet.create({
     text: {
         color: 'white',
         fontSize: 20,
-        fontFamily: "Dancing Script"  
-
+        fontFamily: "Dancing Script",
+        padding: 20,
     },
    
 });

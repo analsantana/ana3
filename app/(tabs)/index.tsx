@@ -1,5 +1,6 @@
 import { Text, View, StyleSheet } from "react-native";
 import { Image } from "expo-image";
+import { ImageSourcePropType } from "react-native";
 import * as ImagePicker from 'expo-image-picker';
 import {useState} from 'react';
 
@@ -8,12 +9,17 @@ import Button from '@/components/Button';
 import ImageViewer from '@/components/ImageViewer';
 import IconButton from '@/components/IconButton';
 import CircleButton from '@/components/CircleButton';
+import EmojiPicker from '@/components/EmojiPicker';
+import EmojiList from '@/components/EmojiList';
+import EmojiSticker from "@/components/EmojiSticker";
 
 const PlaceholderImage = require('@/assets/images/rapunzel.jpg');
 
 export default function Index() {
     const[selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
     const [showAppOptions, setShowAppOptions] = useState<boolean>(false);
+    const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+    const [pickedEmoji, setPickedEmoji] = useState<ImageSourcePropType | undefined>(undefined);
 
   const pickImageAsync = async()=>{
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -33,10 +39,13 @@ export default function Index() {
     setShowAppOptions(false);
   };
   const onAddStricker = () => {
-    //we will implement this later
+    setIsModalVisible(true);
+  };
+  const onModalClose = async () => {
+    setIsModalVisible(false);
   };
   const onSaveImageAsync = async () => {
-    // we will implement this later
+    //we will implement this later
   };
 
   return (
@@ -44,6 +53,7 @@ export default function Index() {
       <Text style={styles.text}>"Meu cabelo tem o poder do sol. Ele brilha quando eu canto."</Text>
       <View style={styles.imageContainer}>
         <ImageViewer imgSource={PlaceholderImage} selectedImage={selectedImage} />
+        {pickedEmoji && <EmojiSticker imageSize={40} stickerSource={pickedEmoji} />}
       </View>
       {showAppOptions ?(
         <View style={styles.optionsContainer}>
@@ -59,9 +69,12 @@ export default function Index() {
         <Button label="Use esta foto" onPress={()=> setShowAppOptions(true)} />
       </View>
     )}
+    <EmojiPicker isVisible={isModalVisible} onClose={onModalClose}>
+      <EmojiList onSelect={setPickedEmoji} onCloseModal={onModalClose} />
+    </EmojiPicker>
     </View>
   );
-  
+
 }
 const styles = StyleSheet.create({
   container: {
@@ -76,7 +89,8 @@ const styles = StyleSheet.create({
   text: {
     color: 'white',
     fontSize: 20,
-    fontFamily: "Dancing Script"
+    fontFamily: "Dancing Script",
+    padding: 20,
   },  
   image: {
     width: 320,

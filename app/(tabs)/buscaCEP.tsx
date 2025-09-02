@@ -16,7 +16,8 @@ return (
     keyboardType = "numeric" 
 />
 
-<Button color='#c494ff'
+<Button 
+    color='#c494ff'
     title="Buscar" 
     onPress = {buscarCEP} 
 /> 
