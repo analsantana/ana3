@@ -1,63 +1,57 @@
-
 import { Tabs } from "expo-router";
-import AntDesign from '@expo/vector-icons/AntDesign';
 import Ionicons from '@expo/vector-icons/Ionicons';
-
-
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 export default function TabLayout() {
   return (
-  <Tabs
-    screenOptions={{
+    <Tabs
+      screenOptions={{
         tabBarActiveTintColor: 'yellow',
-        headerStyle:{
-        backgroundColor:'#6a4375'
-        },
+        headerStyle: { backgroundColor: '#6a4375' },
         headerShadowVisible: false,
-        headerTintColor:'#fff',
-        tabBarStyle:{
-        backgroundColor:'#6a4375'
-        }
-
-    }}
+        headerTintColor: '#fff',
+        tabBarStyle: { backgroundColor: '#6a4375' }
+      }}
     >
-    <Tabs.Screen 
-    name="index"
-    options={{
-        title: 'inicio',
-        tabBarIcon: ({ color, focused}) => (
-            <Ionicons name={focused ? 'sunny' : 'sunny-outline'}size={24} color="yellow" />
-        ),
-    }}
-    />
-    <Tabs.Screen
-    name="about"
-    options={{
-        title: 'Sobre',
-        tabBarIcon: ({ color, focused}) =>  (
-            <AntDesign name={focused ? 'questioncircle' : 'questioncircleo'} color='yellow' size={24}/> 
-        ),
-    }}
-    />
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: 'Inicio',
+          tabBarIcon: ({ focused }) => (
+            <Ionicons name={focused ? 'sunny' : 'sunny-outline'} size={24} color="yellow" />
+          ),
+        }}
+      />
 
-<Tabs.Screen
-    name="toDoList"
-    options={{
-        title: 'Descobertas',
-        tabBarIcon: ({ color, focused}) =>  (
-           <AntDesign name={focused ? 'downcircle' : 'downcircleo'} color='yellow' size={24}/> 
-        ),
-    }}
-    />
-    <Tabs.Screen
-    name="buscaCEP"
-    options={{
-        title: 'Cep',
-        tabBarIcon: ({ color, focused}) =>  (
-           <AntDesign name={focused ? 'exclamationcircle' : 'exclamationcircleo'} color='yellow' size={24}/> 
-        ),
-    }}
-    />
-  </Tabs>
+      <Tabs.Screen
+        name="about"
+        options={{
+          title: 'Sobre',
+          tabBarIcon: ({ focused }) => (
+            <AntDesign name={focused ? 'questioncircle' : 'questioncircleo'} size={24} color="yellow" />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="toDoList"
+        options={{
+          title: 'Descobertas',
+          tabBarIcon: ({ focused }) => (
+            <AntDesign name={focused ? 'downcircle' : 'downcircleo'} size={24} color="yellow" />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="buscaCEP"
+        options={{
+          title: 'CEP',
+          tabBarIcon: ({ focused }) => (
+            <AntDesign name={focused ? 'exclamationcircle' : 'exclamationcircleo'} size={24} color="yellow" />
+          ),
+        }}
+      />
+    </Tabs>
   );
 }
