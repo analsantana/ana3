@@ -1,6 +1,6 @@
 import { Tabs } from "expo-router";
 import Ionicons from '@expo/vector-icons/Ionicons';
-import AntDesign from '@expo/vector-icons/AntDesign';
+import Feather from '@expo/vector-icons/Feather';
 
 export default function TabLayout() {
   return (
@@ -28,7 +28,7 @@ export default function TabLayout() {
         options={{
           title: 'Sobre',
           tabBarIcon: ({ focused }) => (
-            <AntDesign name={focused ? 'questioncircle' : 'questioncircleo'} size={24} color="yellow" />
+            <Feather name={focused ? 'book' : 'book-open'} size={24} color="yellow" />
           ),
         }}
       />
@@ -38,7 +38,7 @@ export default function TabLayout() {
         options={{
           title: 'Descobertas',
           tabBarIcon: ({ focused }) => (
-            <AntDesign name={focused ? 'downcircle' : 'downcircleo'} size={24} color="yellow" />
+            <Ionicons name={focused ? 'bulb-sharp' : 'bulb-outline'} size={24} color="yellow" />
           ),
         }}
       />
@@ -48,7 +48,17 @@ export default function TabLayout() {
         options={{
           title: 'CEP',
           tabBarIcon: ({ focused }) => (
-            <AntDesign name={focused ? 'exclamationcircle' : 'exclamationcircleo'} size={24} color="yellow" />
+            <Ionicons name={focused ? 'location-sharp' : 'location-outline'} size={24} color="yellow" />
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="abrirCamera"
+        options={{
+          title: 'Camera',
+          tabBarIcon: ({ focused }) => (
+            <Ionicons name={focused ? 'camera' : 'camera-outline'} size={24} color="yellow" />
           ),
         }}
       />

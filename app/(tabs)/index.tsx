@@ -57,7 +57,7 @@ export default function Index() {
     setIsModalVisible(false);
   };
   const onSaveImageAsync = async () => {
-      if (Platform.OS === 'web') {
+      if (Platform.OS !== 'web') {
     try {
           const localUri = await captureRef(imageRef, {
               height: 440,
@@ -102,7 +102,7 @@ export default function Index() {
           <View style ={styles.opitonsRow}>
             <IconButton icon="refresh" label="Reset" onPress={onReset} />
             <CircleButton onPress={onAddStricker} />
-            <IconButton icon="save" label="Save" onPress={onSaveImageAsync} />
+            <IconButton icon="save-alt" label="Save" onPress={onSaveImageAsync} />
           </View>
         </View>
       ):(

@@ -1,12 +1,13 @@
 import {Button, StyleSheet, Text, TextInput, View} from 'react-native'; 
 import {useBuscaCep} from '@/hooks/useBuscaCep'; // Importe o hook 
+import AbrirCamera from './abrirCamera';
 
 export default function BuscaCEP() { 
     const { cep, setCep, endereco, buscarCEP} =  useBuscaCep(); // Usando a hook 
 
 return ( 
     <View style={styles.container}> 
-        <Text style={{ color: '#fff' }}>Consulte seu CEP</Text> 
+        <Text style={{ color: 'white', fontSize: 18, fontFamily: "Dancing Script", padding: 20,}}>Consulte seu CEP</Text> 
 
 <TextInput 
     style={styles.textinput}
